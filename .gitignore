@@ -1,0 +1,10 @@
+img/*.png
+img/*.pdf
+*.log
+*.dvi
+*.ps
+*.nav
+*.snm
+*.toc
+*.aux
+*.out

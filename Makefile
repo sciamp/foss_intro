@@ -1,27 +1,32 @@
 latexfile = intro
-#figures = prima.eps seconda.eps
+figures = cc by sa # eps
 
 TEX = latex
 
 # support subdirectories
-#VPATH = Figs
+VPATH = img
 
 #$(latexfile).dvi : $(figures) $(latexfile).tex $(latexfile).bbl
 #	while ($(TEX) $(latexfile) ; \
 #	grep -q "Rerun to get cross" $(latexfile).log ) do true ; \
 #	done
 
-$(latexfile).dvi : $(latexfile).tex
-	while ($(TEX) $(latexfile) ; \
-	grep -q "Rerun to get cross" $(latexfile).log ) do true ; \
+pdffigures :  
+	for x in $(figures) ; do \
+	convert img/$$x.eps img/$$x.png ; \
 	done
 
-$(latexfile).pdf : $(latexfile).ps
-	ps2pdf $(latexfile).ps $(latexfile).pdf
+# $(latexfile).dvi : pdffigures $(latexfile).tex
+# 	while ($(TEX) $(latexfile) ; \
+# 	grep -q "Rerun to get cross" $(latexfile).log ) do true ; \
+# 	done
+
+$(latexfile).pdf : pdffigures
+	pdflatex $(latexfile).tex
 
 pdf : $(latexfile).pdf
 
-$(latexfile).ps : $(latexfile).dvi
-	dvips $(latexfile)
+# $(latexfile).ps : $(latexfile).dvi
+# 	dvips $(latexfile)
 
-ps : $(latexfile).ps 
+# ps : $(latexfile).ps 
