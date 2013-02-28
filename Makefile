@@ -1,5 +1,6 @@
 latexfile = intro
 figures = cc by sa # eps
+ext = log out snm toc aux nav pdf
 
 TEX = latex
 
@@ -30,3 +31,8 @@ pdf : $(latexfile).pdf
 # 	dvips $(latexfile)
 
 # ps : $(latexfile).ps 
+
+clean : 
+	for x in $(ext); do \
+	rm $(latexfile).$$x; \
+	done
