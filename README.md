@@ -1,4 +1,7 @@
-foss_intro
-==========
+Free & Open Source Software
+===========================
 
-Introduzione dell'iniziativa FOSS del collettivo di scienze
+Slides di introduzione all'iniziativa "Free & Open Source Software"
+del Collettivo di Scienze dell'Università di Firenze.
+
+http://collettivodiscienze.org/2013/02/foss-free-open-source-software-2/
