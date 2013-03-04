@@ -9,4 +9,5 @@ img/*.pdf
 *.aux
 *.out
 *.pdf
+*.vrb
 mov/*
